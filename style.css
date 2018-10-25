@@ -1,0 +1,368 @@
+@font-face {
+    font-family: junctionLight;
+    src: url("fonts/junction-light.woff") format('woff');
+}
+
+@font-face {
+    font-family: junctionRegular;
+    src: url("fonts/junction-regular.woff") format('woff');
+}
+
+@font-face {
+    font-family: junctionBold;
+    src: url("fonts/junction-bold.woff") format('woff');
+}
+
+
+@font-face {
+    font-family: ostrichHeavy;
+    src: url("fonts/OstrichSans-Heavy.otf") format('opentype');
+}
+
+@font-face {
+    font-family: ostrichBlack;
+    src: url("fonts/OstrichSans-Black.otf") format('opentype');
+}
+
+@font-face {
+    font-family: ostrichBold;
+    src: url("fonts/OstrichSans-Bold.otf") format('opentype');
+}
+
+@font-face {
+    font-family: ostrichMedium;
+    src: url("fonts/OstrichSans-Medium.otf") format('opentype');
+}
+
+@keyframes text{
+    0%{
+        color:#d9d9d9;
+        margin-bottom: -60px;
+    }
+    30%{
+        letter-spacing: 30px;
+        margin-bottom: -60px;
+    }
+    85%{
+        letter-spacing: 12px;
+        margin-bottom: -60px;
+    }
+}
+
+@keyframes fromLeft{
+    0%{
+        transform: translate(-1000px);
+    }
+    50%{
+        transform: translate(0);
+    }
+}
+
+@keyframes fromRight{
+    0%{
+        transform: translate(1000px);
+    }
+    50%{
+        transform: translate(0);
+    }
+}
+
+@keyframes fromTop{
+    0%{
+        transform: translate(0,-1000px);
+    }
+    50%{
+        transform: translate(0);
+    }
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: 0px;
+    padding: 0px;
+    background: #ccc;
+    font-family: junctionRegular;
+    background-image: url("images/background.png");
+    height: 700px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    text-align: center;
+    position: absolute;
+    top: 15%;
+    left: 20%;
+    width: 100%;
+    transform: translate(-20%,-50%);
+}
+
+.container span{
+    text-transform: uppercase;
+    display: block;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.teamNumber{
+    font-size: 140px;
+    font-weight: 700;
+    letter-spacing: 12px;
+    margin-bottom: 5px;
+    background: #d9d9d9;
+    position: relative;
+    animation: text 3s 1;
+    font-family: ostrichHeavy;
+}
+
+.teamName{
+    font-size: 50px;
+    color: #0077b5;
+    font-family: ostrichHeavy;
+}
+
+ul.navbar{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+ul.navbar li{
+    list-style: none;
+    margin: 0 80px;
+}
+
+ul.navbar li a .fas{
+    font-size:40px;
+    color: #262626;
+    line-height: 80px;
+    transition: .5s;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+li:nth-child(1) .boxLabel{
+    position: absolute;
+    font-size: 26px;
+    top: 125px;
+    left: 60px;
+}
+
+li:nth-child(2) .boxLabel{
+    position: absolute;
+    font-size: 26px;
+    top: 125px;
+    left: 280px;
+}
+
+li:nth-child(3) .boxLabel{
+    position: absolute;
+    font-size: 26px;
+    top: 125px;
+    left: 560px;
+}
+
+li:nth-child(4) .boxLabel{
+    position: absolute;
+    font-size: 26px;
+    top: 125px;
+    left: 800px;
+}
+ul.navbar li a{
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    text-align: center;
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(0,0);
+    transition: .5s;
+    box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+}
+
+ul.navbar li a:before{
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    height: 100%;
+    width: 20px;
+    background: #b1b1b1;
+    transition: .5s;
+    transform: rotate(0deg) skewY(-45deg);
+}
+
+ul.navbar li a:after{
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: -10px;
+    height: 20px;
+    width: 100%;
+    background: #b1b1b1;
+    transition: .5s;
+    transform: rotate(0deg) skewX(-45deg);
+}
+
+ul.navbar li:hover a{
+    transform: perspective(1000px) rotate(-30deg) skew(25deg) translate(20px,-20px);
+    box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+}
+
+ul.navbar li:hover .fas{
+    color: #fff;
+}
+
+ul.navbar li:hover:nth-child(1) a{
+    background: #00ab6b;
+}
+
+ul.navbar li:hover:nth-child(1) a:before{
+    background: #01945d;
+}
+
+ul.navbar li:hover:nth-child(1) a:after{
+    background: #03d083;
+}
+
+ul.navbar li:hover:nth-child(2) a{
+    background: #c45b51;
+}
+
+ul.navbar li:hover:nth-child(2) a:before{
+    background: #dc4e41;
+}
+
+ul.navbar li:hover:nth-child(2) a:after{
+    background: #ea675b;
+}
+
+ul.navbar li:hover:nth-child(3) a{
+    background: #0077b5;
+}
+
+ul.navbar li:hover:nth-child(3) a:before{
+    background: #026192;
+}
+
+ul.navbar li:hover:nth-child(3) a:after{
+    background: #0080c3;
+}
+
+ul.navbar li:hover:nth-child(4) a{
+    background: #1ab7ae;
+}
+
+ul.navbar li:hover:nth-child(4) a:before{
+    background: #158e87;
+}
+
+ul.navbar li:hover:nth-child(4) a:after{
+    background: #23eadf;
+}
+
+.info{
+    position: absolute;
+    top: 500px;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    font-family: ostrichBlack;
+    color: #00ab6b;
+}
+
+.scrollMessage{
+    margin-bottom: 80px;
+}
+
+.colourLeft{
+    height: 100%;
+    width: 600px;
+    opacity: 0.9;
+}
+
+.colourRight{
+    height: 100%;
+    width: 600px;
+    float: right;
+    opacity: 0.9;
+}
+
+.contentLeft{
+    position: absolute;
+    top: 20px;
+    text-align: right;
+    width: 60%;    
+}
+
+.contentRight{
+    position: absolute;
+    left: 400px;
+    top: 40px;
+    width: 100%;
+}
+
+.sectionHeading{
+    font-size: 30px;
+    font-family: junctionRegular;
+    display: block;
+}
+
+#aboutUs{
+    position: absolute;
+    top: 675px;
+    height: 700px;
+    width: 100%;
+}
+
+#problem{
+    position: absolute;
+    top: 1375px;
+    height: 700px;
+    width: 100%;
+}
+
+#idea{
+    position: absolute;
+    top: 2075px;
+    height: 700px;
+    width: 100%;
+}
+
+#app{
+    position: absolute;
+    top: 2775px;
+    height: 700px;
+    width: 100%;
+}
+
+.flyFromLeft{
+    animation: fromLeft 3s 1;
+}
+
+.flyFromRight{
+    animation: fromRight 3s 1;
+}
+
+.flyFromTop{
+    animation: fromTop 3s 1;
+}
+
+.infoList{
+    font-size: 24px;
+    margin-bottom: 80px;
+}
+
+.appLink{
+    font-size: 60px;
+    font-family: ostrichBold;
+}
